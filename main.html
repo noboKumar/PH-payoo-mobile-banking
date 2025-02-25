@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main page</title>
-</head>
-<body>
-    <h1>Hello! welcome</h1>
-</body>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payoo app main page</title>
+    <link rel="shortcut icon" href="./assets/Group.png" type="image/x-icon" />
+    <!-- daisy and tailwind cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .outfit {
+        font-family: "Outfit", serif;
+      }
+    </style>
+  </head>
+  <body class="inter mx-5">
+    <header class="flex justify-between mt-6">
+      <div class="flex">
+        <img src="./assets/Group.png" alt="" />
+        <div>
+          <h1 class="font-bold text-2xl">$ <span>4500</span></h1>
+          <p>Available Balance</p>
+        </div>
+      </div>
+
+      <div>Log Out</div>
+    </header>
+  </body>
 </html>
