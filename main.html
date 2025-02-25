@@ -27,11 +27,13 @@
     </style>
   </head>
   <body class="outfit">
-    <header class="flex justify-between items-center py-4 mx-6 sticky top-0 bg-white z-10">
+    <header
+      class="flex justify-between items-center py-4 px-6 sticky top-0 bg-white z-10 border-b-2"
+    >
       <div class="flex items-center">
         <img src="./assets/Group.png" alt="" />
         <div>
-          <h1 class="font-bold text-3xl">$<span>4500</span></h1>
+          <h1 class="font-bold text-3xl">$<span id="main-balance">4500</span></h1>
           <p class="text-lg text-slate-400">Available Balance</p>
         </div>
       </div>
@@ -39,7 +41,6 @@
         <p class="border px-4 py-2 rounded-xl">Log Out</p>
       </div>
     </header>
-    <hr />
     <main class="mt-8 mx-6">
       <section>
         <h1 class="font-bold text-3xl">🔥 Welcome to Payooo!</h1>
@@ -48,9 +49,12 @@
           is low and
         </p>
       </section>
-
-      <section class="grid gap-3 grid-cols-3 grid-rows-2 py-5">
-        <div
+      <!-- card contaibner -->
+      <section
+        id="card-container"
+        class="grid gap-3 grid-cols-3 grid-rows-2 py-5"
+      >
+        <div id="add-money"
           class="card border-2 flex flex-col justify-center items-center py-4 active:border-blue-500 active:bg-blue-200"
         >
           <img src="./assets/wallet1.png" alt="" />
@@ -88,7 +92,8 @@
         </div>
       </section>
 
-      <section>
+      <!-- latest Payment -->
+      <section id="latest-payment-section">
         <div class="flex justify-between items-center">
           <h1 class="text-xl font-semibold">Latest Payment</h1>
           <p class="text-slate-400">View All</p>
@@ -152,6 +157,55 @@
           </div>
         </div>
       </section>
+
+      <!-- add money -->
+       <section id="add-money-section">
+        <div">
+            <div class="hero-content flex-col lg:flex-row-reverse p-0">
+              <div class="card bg-base-100 w-full shrink-0 shadow-2xl">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                        <span>Select A Bank</span>
+                    </label>
+                    <select id="bank-selector" class="select select-bordered w-full">
+                        <option disabled selected>Select bank</option>
+                        <option>bKash</option>
+                        <option>Nagad</option>
+                        <option>Rocket</option>
+                        <option>Upay</option>
+                      </select>
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Bank Account Number</span>
+                    </label>
+                    <input value="01983765233" id="bank-ac-number" type="number" placeholder="Enter 11 digit account number" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Amount to Add</span>
+                    </label>
+                    <input id="add-ammount" type="number" placeholder="Add Amount" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Pin Number</span>
+                    </label>
+                    <input value="1234" id="pin-number" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" required />
+                    <label class="label">
+                      <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                    </label>
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="add-money-btn" class="btn btn-primary border-none bg-blue-600">Add Money</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+       </section>
     </main>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>
