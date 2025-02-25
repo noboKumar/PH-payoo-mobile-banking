@@ -28,44 +28,58 @@
   </head>
   <body class="container mx-auto inter">
     <header class="mt-16">
-        <div class="flex justify-center items-center">
-            <img class="mx-auto relative" src="./assets/bg.png" alt="">
-            <img class="mx-auto absolute top-20" src="./assets/Group.png" alt="">
-        </div>
+      <div class="flex justify-center items-center">
+        <img class="mx-auto relative" src="./assets/bg.png" alt="" />
+        <img class="mx-auto absolute top-20" src="./assets/Group.png" alt="" />
+      </div>
     </header>
     <main>
-        <section class="container mx-auto absolute top-52">
-            <div>
-                <div class="hero-content flex-col lg:flex-row-reverse">
-                  <div class="card bg-base-100 w-full max-w-sm shrink-0 border-2 shadow-xl">
-                    <form class="card-body">
-                      <div class="form-control">
-                        <label class="label">
-                          <span class="label-text">Mobile Number</span>
-                        </label>
-                        <input
-                        id="mobile-number" 
-                        value="00987356236" type="number" placeholder="Enter your number" class="input input-bordered bg-slate-50" required />
-                      </div>
-                      <div class="form-control">
-                        <label class="label">
-                          <span class="label-text">4 Digit Pin</span>
-                        </label>
-                        <input
-                        id="pin-number"
-                         value="1234" type="password" placeholder="Enter 4 Digit Pin" class="input input-bordered bg-slate-50" required />
-                        <label class="label">
-                          <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
-                      </div>
-                      <div class="form-control mt-6">
-                        <button id="login-btn" class="btn btn-primary">Login</button>
-                      </div>
-                    </form>
-                  </div>
+      <section class="container mx-auto absolute top-52">
+        <div>
+          <div class="hero-content flex-col lg:flex-row-reverse">
+            <div
+              class="card bg-base-100 w-full max-w-sm shrink-0 border-2 shadow-xl"
+            >
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Mobile Number</span>
+                  </label>
+                  <input
+                    id="mobile-number"
+                    value="01987356236"
+                    type="number"
+                    placeholder="Enter your number"
+                    class="input input-bordered bg-slate-50"
+                    required
+                  />
                 </div>
-              </div>
-        </section>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">4 Digit Pin</span>
+                  </label>
+                  <input
+                    id="pin-number"
+                    value="1234"
+                    type="password"
+                    placeholder="Enter 4 Digit Pin"
+                    class="input input-bordered bg-slate-50"
+                    required
+                  />
+                  <label class="label">
+                    <a href="#" class="label-text-alt link link-hover"
+                      >Forgot password?</a
+                    >
+                  </label>
+                </div>
+                <div class="form-control mt-6">
+                  <button id="login-btn" class="btn btn-primary">Login</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="./scripts/script.js"></script>
   </body>
