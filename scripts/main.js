@@ -31,7 +31,7 @@ document
     document.getElementById("add-ammount").value = "";
   });
 
-// withdraw money function
+// cashout money function
 document
   .getElementById("withdraw-money-btn")
   .addEventListener("click", function (event) {
@@ -44,6 +44,11 @@ document
     let convtPinNum = parseInt(pinNum);
     const mainBalance = document.getElementById("main-balance").innerText;
     let convtMainBalance = parseFloat(mainBalance);
+
+    if (withdrawAmmount > convtMainBalance) {
+      alert("insufficient Balance");
+      return;
+    }
 
     if (agentNum.length === 11) {
       if (withdrawAmmount >= 1) {
@@ -62,4 +67,44 @@ document
     }
     // clear money input field
     document.getElementById("add-ammount").value = "";
+  });
+
+
+
+  // transfer money function
+document
+  .getElementById("transfer-money-btn")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const userNum = document.getElementById("agent-number").value;
+    const transferAmmount = document.getElementById("transfer-ammount").value;
+    const convtTransferAmmount = parseFloat(transferAmmount);
+    const pinNum = document.getElementById("pin-number").value;
+    let convtPinNum = parseInt(pinNum);
+    const mainBalance = document.getElementById("main-balance").innerText;
+    let convtMainBalance = parseFloat(mainBalance);
+
+    if (convtTransferAmmount > convtMainBalance) {
+      alert("insufficient Balance");
+      return;
+    }
+
+    if (userNum.length === 11) {
+      if (convtTransferAmmount >= 1) {
+        if (convtPinNum === 1234) {
+          let sum = 0;
+          sum = convtMainBalance - convtTransferAmmount;
+          document.getElementById("main-balance").innerText = sum;
+        } else {
+          alert("incorrect Pin Number!");
+        }
+      } else {
+        alert("enter a valid ammount");
+      }
+    } else {
+      alert("enter a valid AC. number");
+    }
+    // clear money input field
+    document.getElementById("transfer-ammount").value = "";
   });

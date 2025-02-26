@@ -40,7 +40,7 @@
         </div>
       </div>
       <div>
-        <p class="border px-4 py-2 rounded-xl">Log Out</p>
+        <p id="logout-btn" class="btn">Log Out</p>
       </div>
     </header>
     <main class="mt-8 mx-6">
@@ -70,7 +70,7 @@
           <img src="./assets/send1.png" alt="" />
           <p class="text-center text-slate-500">Cashout</p>
         </div>
-        <div
+        <div id="transfer-money"
           class="card border-2 flex flex-col justify-center items-center py-4 active:border-blue-500 active:bg-blue-200"
         >
           <img src="./assets/money1.png" alt="" />
@@ -295,7 +295,69 @@
                     id="withdraw-money-btn"
                     class="btn btn-primary border-none bg-blue-600"
                   >
-                  Withdraw Money
+                    Withdraw Money
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- transfer money section -->
+      <section id="transfer-money-section">
+        <h1 class="text-xl font-semibold">Transfer Money</h1>
+        <div>
+          <div class="hero-content flex-col lg:flex-row-reverse p-0">
+            <div class="card bg-base-100 w-full shrink-0 shadow-2xl">
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">User Account Number</span>
+                  </label>
+                  <input
+                    id="user-number"
+                    type="number"
+                    placeholder="Enter 11 digit number"
+                    class="input input-bordered"
+                    required
+                  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Enter amount to withdraw</span>
+                  </label>
+                  <input
+                    id="transfer-ammount"
+                    type="number"
+                    placeholder="Enter amount to withdraw"
+                    class="input input-bordered"
+                    required
+                  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Pin Number</span>
+                  </label>
+                  <input
+                    value="1234"
+                    id="pin-number"
+                    type="password"
+                    placeholder="Enter 4 digit pin number"
+                    class="input input-bordered"
+                    required
+                  />
+                  <label class="label">
+                    <a href="#" class="label-text-alt link link-hover"
+                      >Forgot password?</a
+                    >
+                  </label>
+                </div>
+                <div class="form-control mt-6">
+                  <button
+                    id="transfer-money-btn"
+                    class="btn btn-primary border-none bg-blue-600"
+                  >
+                    Send Now
                   </button>
                 </div>
               </form>
