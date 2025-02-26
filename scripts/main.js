@@ -1,19 +1,3 @@
-// default section
-document.getElementById("add-money-section").style.display = "none";
-document.getElementById("cashout-section").style.display = "none";
-
-
-// toggle: default to add money
-document.getElementById("add-money").addEventListener("click", function () {
-  const defaultSection = document.getElementById("latest-payment-section");
-  const addMoneySection = document.getElementById("add-money-section");
-  
-  document.getElementById("cashout-section").style.display = "none";
-
-  defaultSection.style.display = "none";
-  addMoneySection.style.display = "block";
-});
-
 // add money function
 document
   .getElementById("add-money-btn")
