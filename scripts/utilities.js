@@ -8,6 +8,11 @@ function displayStyle(id, style) {
 // get id and give that id value
 function getValueById(id) {
    const value = document.getElementById(id).value;
-   return parseInt(value);
+   const convertValue = parseInt(value)
+   return convertValue;
 }
 
+// set innerText
+function setInnerText(id, value) {
+    document.getElementById(id).innerText = value;
+}

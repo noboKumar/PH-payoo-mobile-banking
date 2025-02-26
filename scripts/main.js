@@ -69,9 +69,7 @@ document
     document.getElementById("add-ammount").value = "";
   });
 
-
-
-  // transfer money function
+// transfer money function
 document
   .getElementById("transfer-money-btn")
   .addEventListener("click", function (event) {
@@ -108,3 +106,31 @@ document
     // clear money input field
     document.getElementById("transfer-ammount").value = "";
   });
+
+// pay bill function
+document.getElementById("pay-btn").addEventListener("click", function (event) {
+  event.preventDefault();
+  const billerNum = document.getElementById("biller-number").value;
+  const payAmmount = getValueById("pay-ammount");
+  const pinNum = getValueById("pin-number");
+  const mainBalance = document.getElementById("main-balance").innerText;
+  const convtMainBalance = parseFloat(mainBalance)
+
+  if (payAmmount>convtMainBalance) {
+    alert("insufficient Balance")
+    return
+  }
+  if (billerNum.length === 11) {
+    if (pinNum === 1234) {
+      let sum = 0;
+      sum = convtMainBalance - payAmmount;
+      setInnerText("main-balance", sum)
+    } else {
+      alert("Incorrect Password!");
+    }
+  } else {
+    alert("Enter a Valid Number");
+  }
+  document.getElementById("pay-ammount").value = "";
+  document.getElementById("biller-number").value = "";
+});
