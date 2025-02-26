@@ -30,16 +30,6 @@ document
     // clear money input field
     document.getElementById("add-ammount").value = "";
   });
-// toggle: default to add money
-document.getElementById("cashout").addEventListener("click", function () {
-  const defaultSection = document.getElementById("latest-payment-section");
-  const addMoneySection = document.getElementById("add-money-section");
-  const cashoutSection = document.getElementById("cashout-section");
-
-  defaultSection.style.display = "none";
-  addMoneySection.style.display = "none";
-  cashoutSection.style.display = "block";
-});
 
 // withdraw money function
 document
