@@ -9,6 +9,7 @@ document.getElementById("logout-btn").addEventListener("click",function(event){
 document.getElementById("add-money-section").style.display = "none";
 document.getElementById("cashout-section").style.display = "none";
 document.getElementById("transfer-money-section").style.display = "none";
+document.getElementById("bonus-section").style.display = "none";
 
 // toggle: default to add money
 document.getElementById("add-money").addEventListener("click", function () {
@@ -30,4 +31,13 @@ document.getElementById("transfer-money").addEventListener("click",function(){
     displayStyle("cashout-section", "none");
     displayStyle("add-money-section", "none");
     displayStyle("latest-payment-section", "none");
-})
+});
+
+// toggle: default to transfer money
+document.getElementById("bonus").addEventListener("click",function(){
+    displayStyle("bonus-section", "block");
+    displayStyle("transfer-money-section", "none");
+    displayStyle("cashout-section", "none");
+    displayStyle("add-money-section", "none");
+    displayStyle("latest-payment-section", "none");
+});
