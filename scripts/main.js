@@ -11,6 +11,8 @@ document
     let convtPinNum = parseInt(pinNum);
     const mainBalance = document.getElementById("main-balance").innerText;
     let convtMainBalance = parseFloat(mainBalance);
+    const timeNow = new Date().toLocaleTimeString();
+    const bank = document.getElementById("bank-selector").value;
 
     if (bankAcNum.length === 11) {
       if (addAmmount >= 1) {
@@ -18,6 +20,25 @@ document
           let sum = 0;
           sum = convtAddAmmount + convtMainBalance;
           document.getElementById("main-balance").innerText = sum;
+
+          const transcationContainer = document.getElementById(
+            "transction-history-container"
+          );
+          const div = document.createElement("div");
+          div.classList.add("py-5");
+          div.innerHTML = `
+          <div class="flex justify-between border-2 p-4 rounded-2xl">
+            <div class="flex items-center gap-4">
+            <img src="./assets/wallet1.png" alt="">
+            <div>
+              <h1 class="text-lg font-semibold text-slate-600">Credited ${convtAddAmmount} TK from ${bank}</h1>
+              <p class=" text-slate-500">${timeNow}</p>
+            </div>
+          </div>
+          <p class="text-xl">:</p>
+        </div>
+          `;
+          transcationContainer.appendChild(div);
         } else {
           alert("incorrect Pin Number!");
         }
@@ -44,6 +65,7 @@ document
     let convtPinNum = parseInt(pinNum);
     const mainBalance = document.getElementById("main-balance").innerText;
     let convtMainBalance = parseFloat(mainBalance);
+    const timeNow = new Date().toLocaleTimeString();
 
     if (withdrawAmmount > convtMainBalance) {
       alert("insufficient Balance");
@@ -56,6 +78,25 @@ document
           let sum = 0;
           sum = convtMainBalance - convtWithdrawAmmount;
           document.getElementById("main-balance").innerText = sum;
+
+          const transcationContainer = document.getElementById(
+            "transction-history-container"
+          );
+          const div = document.createElement("div");
+          div.classList.add("py-5");
+          div.innerHTML = `
+          <div class="flex justify-between border-2 p-4 rounded-2xl">
+            <div class="flex items-center gap-4">
+            <img src="./assets/wallet1.png" alt="">
+            <div>
+              <h1 class="text-lg font-semibold text-slate-600">Debited ${convtWithdrawAmmount} TK from ${agentNum}</h1>
+              <p class=" text-slate-500">${timeNow}</p>
+            </div>
+          </div>
+          <p class="text-xl">:</p>
+        </div>
+          `;
+          transcationContainer.appendChild(div);
         } else {
           alert("incorrect Pin Number!");
         }
@@ -82,6 +123,7 @@ document
     let convtPinNum = parseInt(pinNum);
     const mainBalance = document.getElementById("main-balance").innerText;
     let convtMainBalance = parseFloat(mainBalance);
+    const timeNow = new Date().toLocaleTimeString();
 
     if (convtTransferAmmount > convtMainBalance) {
       alert("insufficient Balance");
@@ -94,6 +136,25 @@ document
           let sum = 0;
           sum = convtMainBalance - convtTransferAmmount;
           document.getElementById("main-balance").innerText = sum;
+
+          const transcationContainer = document.getElementById(
+            "transction-history-container"
+          );
+          const div = document.createElement("div");
+          div.classList.add("py-5");
+          div.innerHTML = `
+          <div class="flex justify-between border-2 p-4 rounded-2xl">
+            <div class="flex items-center gap-4">
+            <img src="./assets/wallet1.png" alt="">
+            <div>
+              <h1 class="text-lg font-semibold text-slate-600">Transfer ${transferAmmount} TK To ${userNum}</h1>
+              <p class=" text-slate-500">${timeNow}</p>
+            </div>
+          </div>
+          <p class="text-xl">:</p>
+        </div>
+          `;
+          transcationContainer.appendChild(div);
         } else {
           alert("incorrect Pin Number!");
         }
@@ -114,17 +175,37 @@ document.getElementById("pay-btn").addEventListener("click", function (event) {
   const payAmmount = getValueById("pay-ammount");
   const pinNum = getValueById("pin-number");
   const mainBalance = document.getElementById("main-balance").innerText;
-  const convtMainBalance = parseFloat(mainBalance)
+  const convtMainBalance = parseFloat(mainBalance);
+  const timeNow = new Date().toLocaleTimeString();
+  const bill = document.getElementById("bill-selector").value;
 
-  if (payAmmount>convtMainBalance) {
-    alert("insufficient Balance")
-    return
+  if (payAmmount > convtMainBalance) {
+    alert("insufficient Balance");
+    return;
   }
   if (billerNum.length === 11) {
     if (pinNum === 1234) {
       let sum = 0;
       sum = convtMainBalance - payAmmount;
-      setInnerText("main-balance", sum)
+      setInnerText("main-balance", sum);
+      const transcationContainer = document.getElementById(
+        "transction-history-container"
+      );
+      const div = document.createElement("div");
+      div.classList.add("py-5");
+      div.innerHTML = `
+      <div class="flex justify-between border-2 p-4 rounded-2xl">
+        <div class="flex items-center gap-4">
+        <img src="./assets/wallet1.png" alt="">
+        <div>
+          <h1 class="text-lg font-semibold text-slate-600">Paid ${payAmmount} TK for ${bill}</h1>
+          <p class=" text-slate-500">${timeNow}</p>
+        </div>
+      </div>
+      <p class="text-xl">:</p>
+    </div>
+      `;
+      transcationContainer.appendChild(div);
     } else {
       alert("Incorrect Password!");
     }
